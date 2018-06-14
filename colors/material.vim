@@ -1,14 +1,14 @@
 " vim-material Theme v1.0.0
 
-set background=dark
-highlight clear 
-
-if exists("syntax_on")
-  syntax reset
+if version > 580
+  hi clear
+  if exists("syntax_on")
+    syntax reset
+  endif
 endif
 
 let g:colors_name = "material"
-
+let s:is_dark=(&background == 'dark')
 let s:gui = {}
 let s:cterm = {}
 
@@ -189,3 +189,7 @@ call s:hi("xmlTag",     s:gui.cyan,   "", "", "", "")
 call s:hi("xmlEndTag",  s:gui.cyan,   "", "", "", "")
 call s:hi("xmlTagName", s:gui.red,    "", "", "", "")
 call s:hi("xmlAttrib",  s:gui.yellow, "", "", "", "")
+
+if s:is_dark
+  set background=dark
+endif
