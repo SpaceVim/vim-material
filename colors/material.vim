@@ -7,7 +7,7 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let g:colors_name = "vim-material"
+let g:colors_name = "material"
 
 let s:gui = {}
 let s:cterm = {}
